@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="sign_up.css"/>
+<html>
+    <head>
+    
+
+        <img src="SignUp.jpg" width=500 height=100 float:left/>
+        <script type="text/javascript">
+            const fs = require('fs');
+            let data = "Bharat"
+            fs.writeFile('./output.txt', data, (err) => {
+	            if (err) throw err; 
+            }) 
+            document.open();
+            function myEnter () {
+                let name = document.getElementById("Name").value;
+                let age = document.getElementById("age").value;
+                let User = document.getElementById("User").value;
+                let Pass = document.getElementById("Pass").value;
+                let School = document.getElementById("School").value;
+                let ZIP = document.getElementById("ZIP").value;
+                document.write("Full Name: ")
+                document.write(name);
+                document.write("<br>");
+                document.write("Age: ")
+                document.write(age);
+                document.write("<br>");
+                document.write("Username: ")
+                document.write(User);
+                document.write("<br>");
+                document.write("Password: ")
+                document.write(Pass);
+                document.write("<br>");
+                document.write("School: ")
+                document.write(School);
+                document.write("<br>");
+                document.write("ZIP: ")
+                document.write(ZIP);
+            }
+            document.close();
+        </script>
+        <title>
+            
+        </title>
+    </head>
+    <body>
+
+        <h1>
+        </h1>
+        <p><b>
+
+   &emsp;&emsp;&emsp;&emsp;&emsp;Full name: <input type="text" name="name" id = "Name"> 
+
+    <br><br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;Age: <input type="number" name="age" id = "age">
+    <br><br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;Make a Username: <input type="text" name="User" id = "User">
+    <br><br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;Make a Password: <input type="text" name="Pass" id = "Pass">
+    <br><br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;School: <input type="text" name ="School" id = "School">
+    <br><br>
+    &emsp;&emsp;&emsp;&emsp;&emsp;ZIP Code: <input type ="number" name="ZIP" id="ZIP">
+    <br><br> 
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<button onclick="myEnter()" style="width:170px;height:70px;">Enter</button>
+
+    
+            </b></p>
+        
+        
+
+    </body>
+</html>

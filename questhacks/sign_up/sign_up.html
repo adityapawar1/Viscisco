@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="sign_up.css" />
+<html>
+
+<head>
+
+    <div><img src="SignUp.jpg" width=500 height=100 float:left /></div>
+
+
+
+    <script type="text/javascript">
+        document.open();
+        function myEnter() {
+            let name = document.getElementById("Name").value;
+            let age = document.getElementById("age").value;
+            let User = document.getElementById("User").value;
+            let Pass = document.getElementById("Pass").value;
+            let School = document.getElementById("School").value;
+            let city = document.getElementById("City").value;
+            function download(strData, strFileName, strMimeType) {
+                var D = document,
+                    A = arguments,
+                    a = D.createElement("a"),
+                    d = A[0],
+                    n = A[1],
+                    t = A[2] || "text/plain";
+                a.href = "data:" + strMimeType + "charset=utf-8," + escape(strData);
+
+
+                if (window.MSBlobBuilder) {
+                    var bb = new MSBlobBuilder();
+                    bb.append(strData);
+                    return navigator.msSaveBlob(bb, strFileName);
+                }
+
+
+
+                if ('download' in a) {
+                    a.setAttribute("download", n);
+                    a.innerHTML = "downloading...";
+                    D.body.appendChild(a);
+                    setTimeout(function () {
+                        var e = D.createEvent("MouseEvents");
+                        e.initMouseEvent("click", true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+                        a.dispatchEvent(e);
+                        D.body.removeChild(a);
+                    }, 66);
+                    return true;
+                };
+                var f = D.createElement("iframe");
+                D.body.appendChild(f);
+                f.src = "data:" + (A[2] ? A[2] : "application/octet-stream") + (window.btoa ? ";base64" : "") + "," + (window.btoa ? window.btoa : escape)(strData);
+                setTimeout(function () {
+                    D.body.removeChild(f);
+                }, 333);
+                return true;
+            }
+            var t_string = name + "-" + age+ "-"+User + "-"+Pass+"-"+ School + "-" + city;
+            console.log(t_string);
+            download(t_string, 'sign_up.txt', 'text/plain');
+        }
+        document.close();
+    </script>
+    <title>
+
+    </title>
+</head>
+<body>
+
+    <h1>
+    </h1>
+    <p><b>
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Full name: <input type="text" name="name" id="Name">
+
+            <br><br>
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Age: <input type="number" name="age" id="age">
+            <br><br>
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Make a Username: <input type="text" name="User" id="User">
+            <br><br>
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Make a Password: <input type="text" name="Pass" id="Pass">
+            <br><br>
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;School: <input type="text" name="School" id="School">
+            <br><br>
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;City: <input type="text" name="ZIP" id="City">
+            <br><br>
+            &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<button onclick="myEnter()" style="width:170px;height:70px;">Enter</button>
+        </b></p>
+    <h2><br><br><br><br><br><br></h2>
+</body>
+
